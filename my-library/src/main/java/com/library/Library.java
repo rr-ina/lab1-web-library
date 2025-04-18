@@ -14,7 +14,13 @@ public class Library
         this.readers = new ArrayList<>();
     }
 
-    public void addBook(Book book) { books.add(book); }
+    public boolean addBook(Book book) { 
+        if (findBookById(book.getId()) == null) {
+            books.add(book);
+            return true;
+        }
+        return false;
+    }
 
     public boolean removeBook(Book book) { return books.remove(book); }
 
@@ -41,5 +47,24 @@ public class Library
         }
         return false;
     }
+
+    public Book findBookById(String bookId) {
+        for (Book book : books) {
+            if (book.getId().equals(bookId)) {
+                return book;
+            }
+        }
+        return null;
+    }
+
+    public Reader findReaderById(String readerId) {
+        for (Reader reader : readers) {
+            if (reader.getId().equals(readerId)) {
+                return reader;
+            }
+        }
+        return null;
+    }
+    
 }
 

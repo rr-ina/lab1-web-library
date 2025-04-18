@@ -17,6 +17,10 @@ public class Reader
         this.borrowedBooks = new ArrayList<>();
     }
 
+    public Reader() {
+        this.borrowedBooks = new ArrayList<>();
+    }
+    
     public String getId() { return id; }
     public void setId(String id) { this.id = id;}
     
@@ -48,4 +52,9 @@ public class Reader
 
     @Override
     public int hashCode() { return Objects.hash(id); }
+
+    @Override
+    public String toString() {
+        return "Reader{id='" + id + "', name='" + name + "', borrowedBooks=" + borrowedBooks + "}";
+    }
 }

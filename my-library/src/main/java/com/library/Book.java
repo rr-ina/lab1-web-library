@@ -17,6 +17,8 @@ public class Book
         this.isBorrowed = false;
     }
 
+    public Book() {}
+
     public String getId() { return id; }
     public void setId(String id) { this.id = id;}
 
@@ -48,4 +50,11 @@ public class Book
 
     @Override
     public int hashCode() { return Objects.hash(id); }
+
+    @Override
+    public String toString() 
+    {
+        return "Book{id='" + id + "', title='" + title + "', author='" + author + "', isBorrowed=" + isBorrowed + "}";
+    }
+    
 }
